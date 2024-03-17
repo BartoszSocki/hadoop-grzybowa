@@ -1,0 +1,24 @@
+services:
+  nn1:
+    build: .
+    image: hadoop/test
+    container_name: "nn1"
+    networks:
+      - my_net
+  dn1:
+    build: .
+    image: hadoop/test
+    container_name: "dn1"
+    networks:
+      - my_net
+  dn2:
+    build: .
+    image: hadoop/test
+    container_name: "dn2"
+    networks:
+      - my_net
+
+networks:
+  my_net:
+    driver: bridge
+
